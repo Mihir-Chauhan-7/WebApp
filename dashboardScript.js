@@ -1,3 +1,4 @@
+
 console.log("DashBoard");
 {
     if (sessionStorage.getItem('adminEmail') != null) {
@@ -21,22 +22,25 @@ console.log("DashBoard");
     else {
         alert("Please Login First");
     }
+    
 }
 function logOutUser() {
     sessionStorage.removeItem('adminEmail');
 }
 
 function showBirthDay() {
-    var currentDate = new Date(2018, 01, 12);
+    var currentDate = new Date(2018,11,01);
 
     var date = currentDate.getMonth() + "-" + currentDate.getDate();
 
     userArray.forEach(singleUser => {
         console.log("Current " + date);
+        
         var userDate = new Date(singleUser.dob);
         var userBday = userDate.getMonth() + "-" + userDate.getDate();
+        console.log("User " +userBday);
         if (userBday == date) {
-            document.getElementById('userName').innerHTML += "Today is " + singleUser.name + "'s Birthday";
+            document.getElementById('bdayWish').innerHTML += "<br>Today is " + singleUser.name + "'s Birthday";
         }
     });
 }
