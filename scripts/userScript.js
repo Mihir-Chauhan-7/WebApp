@@ -50,7 +50,6 @@ function displayUserList() {
 function updateUser(index) {
     //form = document.getElementById('userForm');
     console.log("UpdateUser " + index);
-    console.log(form);
     var singleObj = userArray[index];
     console.log(singleObj);
     form.txtEmail.value = singleObj.email;
