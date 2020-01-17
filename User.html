@@ -3,16 +3,21 @@
 
 <head>
     <title>User</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <label id="userName"></label>
+    
+    <fieldset>
+        <legend>Pages</legend>
+    <a href="Dashboard.html">Dashboard</a>
     <a href="User.html">Users</a>
+    <a href="UserSession.html">Login Session</a>
+    </fieldset>
 
-    <form id="userForm">
+    <fieldset>
+        <legend id="formTitle">Add Sub-User</legend>
+        <form id="userForm">
+        
         <input id="txtid" type="hidden" value="-1">
         <input id="txtName" type="text" placeholder="Name">
         <input id="txtEmail" type="text" placeholder="Email">
@@ -20,18 +25,20 @@
         <input type="date" id="txtDob">
         <input id="btnAdd" name="btn" type="submit" value="Add User">
     </form>
+</fieldset>
+<fieldset>
+    <legend>User List</legend>
     <table border="1">
         <th>Name</th>
         <th>Email</th>
         <th>Password</th>
         <th>Birthdate</th>
         <th>Age</th>
-        <th>Actions</th>
-        <th>actions</th>
+        <th colspan="2">Actions</th>
         <tbody id="userData">
         </tbody>
     </table>
-
+</fieldset>
     <script src='userScript.js'></script>
 </body>
 

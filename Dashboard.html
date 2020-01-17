@@ -7,18 +7,26 @@
 </head>
 
 <body>
-    <label id="userName"></label>
+    <fieldset id="links">
+    <legend id="userName"></legend>
+
+    <a href="Dashboard.html">Dashboard</a>
     <a href="User.html">Users</a>
-    <div id="dashboardmain">
-        <div style=" float: left;background-color: lightgoldenrodyellow; border: 1px solid; width: 100px; height: 100px;"
-            id="div1"></div>
-        <div style=" float: left;background-color: lightgoldenrodyellow; border: 1px solid; width: 100px; height: 100px;"
-            id="div2"></div
-            style=" float: left;background-color: lightgoldenrodyellow; border: 1px solid; width: 100px; height: 100px;">
-        <div style=" float: left;background-color: lightgoldenrodyellow; border: 1px solid; width: 100px; height: 100px;"
-            id="div3"></div>
+    <a href="UserSession.html">Login Session</a>
+</fieldset>
+    <fieldset id="dashboardmain">
+        <legend>Dashboard</legend>
+        <div style=" float: left;margin-left: 10px;text-align: center ; background-color: lightgoldenrodyellow; border: 1px solid; width: 220px; height: 100px;"
+            id="div1"><label>Less Than 18</label><br><br></div>
+        <div style=" float: left;margin-left: 10px;text-align: center;background-color: lightgoldenrodyellow; border: 1px solid; width: 220px; height: 100px;"
+            id="div2"><label>Greater Than 18 & Less Than 50</label><br><br>
     </div>
-    <div id="bdayWish"></div>
+        <div style=" float: left;margin-left: 10px;text-align: center;background-color: lightgoldenrodyellow; border: 1px solid; width: 220px; height: 100px;"
+            id="div3"><label>Greater Than 50</label><br><br></div>
+    </fieldset>
+
+    <br><div id="bdayWish" style="text-align: center;"></div>
+    
     <script src='dashboardScript.js'></script>
 </body>
 

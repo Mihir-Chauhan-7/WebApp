@@ -2,7 +2,7 @@ let adminObj;
 let userArray;
 let sessionLog=new Array();
 {
-    if(localStorage.getItem('isAdminRegister')==null)
+    if(localStorage.getItem('adminObject')==null )
     {
         console.log("Not Registered");
         document.getElementById('btnRegister').hidden=false;
@@ -11,7 +11,15 @@ let sessionLog=new Array();
     {
         userArray=JSON.parse(localStorage.getItem('userData'));
         adminObj=JSON.parse(localStorage.getItem('adminObject'));
-        sessionLog=JSON.parse(localStorage.getItem('sessionData'));
+        if(localStorage.getItem('sessionData')==null)
+        {
+            sessionLog=[];
+        }
+        else
+        {
+            sessionLog=JSON.parse(localStorage.getItem('sessionData'));
+        }
+        
         console.log("Registered");
         
     }
@@ -54,6 +62,7 @@ form.addEventListener("submit",event => {
     {
         alert("Incorrect Email or Password");
     }
+    
     event.preventDefault();
     localStorage.setItem('isAdminRegister',true);
     

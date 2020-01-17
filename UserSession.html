@@ -5,12 +5,21 @@
     
 </head>
 <body>
-    <table border="1">
+    <fieldset>
+        <legend>Pages</legend>
+    <a href="Dashboard.html">Dashboard</a>
+    <a href="User.html">Users</a>
+    <a href="UserSession.html">Login Session</a>
+    </fieldset>
+    <fieldset>
+        <legend>Session Log</legend>
+    <table  style="border: 1px solid; text-align: center;">
         <th>Name</th>
         <th>Login Time</th>
         <th>Logout Time</th>
         <tbody id="sessionList"></tbody>
     </table>
+</fieldset>
     <script src='scripts/userSessionScript.js'></script>
 </body>
 </html>

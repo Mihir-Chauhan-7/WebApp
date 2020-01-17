@@ -11,6 +11,7 @@ let userArray = [];
     }
     else {
         alert("Please Login First");
+        location.replace("Login.html");
     }
 }
 class User {

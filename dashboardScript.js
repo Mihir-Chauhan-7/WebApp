@@ -5,7 +5,8 @@ console.log("DashBoard");
         console.log("True");
         if (localStorage.getItem('adminObject') != null) {
             var adminObj = JSON.parse(localStorage.getItem('adminObject'));
-            document.getElementById('userName').innerHTML = "Hello " + adminObj.name + "<input type='button' onclick='logOutUser()' value='Logout'>";
+            document.getElementById('userName').innerHTML = "Hello " + adminObj.name;
+            document.getElementById('links').innerHTML+="<input type='button' onclick='logOutUser()' value='Logout'>";
             if (localStorage.getItem('userData') != null) {
                 userArray = JSON.parse(localStorage.getItem('userData'));
                 displayCount();
@@ -21,15 +22,17 @@ console.log("DashBoard");
     }
     else {
         alert("Please Login First");
+        location.replace('Login.html');
     }
     
 }
 function logOutUser() {
     sessionStorage.removeItem('adminEmail');
+    location.replace("Login.html");
 }
 
 function showBirthDay() {
-    var currentDate = new Date(2018,11,01);
+    var currentDate = new Date();
 
     var date = currentDate.getMonth() + "-" + currentDate.getDate();
 
@@ -37,7 +40,7 @@ function showBirthDay() {
         console.log("Current " + date);
         
         var userDate = new Date(singleUser.dob);
-        var userBday = userDate.getMonth() + "-" + userDate.getDate();
+        var userBday = (userDate.getMonth()) + "-" + userDate.getDate();
         console.log("User " +userBday);
         if (userBday == date) {
             document.getElementById('bdayWish').innerHTML += "<br>Today is " + singleUser.name + "'s Birthday";
@@ -64,7 +67,7 @@ function displayCount() {
             greaterThan50++;
         }
     });
-    document.getElementById("div1").innerHTML = lessThan18;
-    document.getElementById("div2").innerHTML = between18To50;
-    document.getElementById("div3").innerHTML = greaterThan50;
+    document.getElementById("div1").innerHTML += lessThan18+" Users";
+    document.getElementById("div2").innerHTML += between18To50+" Users";
+    document.getElementById("div3").innerHTML += greaterThan50+" Users";
 }
