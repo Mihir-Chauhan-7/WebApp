@@ -53,7 +53,7 @@ function displayUserList() {
     document.getElementById("userData").innerHTML = "";
     userArray.forEach((user, index) => {
 
-        document.getElementById("userData").innerHTML += "<tr><td>" + user.name + "<td>" + user.email + "</td>" + "<td>" + user.password + "</td>" + "<td>" + user.dob + "</td>" + "<td>" + user.age + "</td>" + "<td><a onclick='updateUser("+ index +")'>Edit</a>" + "</td>" + "<td>" + "<a onclick='deleteUser()'>Delete</a>" + "</td>" + "</td></tr>";
+        document.getElementById("userData").innerHTML += "<tr><td>" + user.name + "<td>" + user.email + "</td>" + "<td>" + user.password + "</td>" + "<td>" + user.dob + "</td>" + "<td>" + user.age + "</td>" + "<td><a onclick='updateUser("+ index +")'>Edit</a>" + "</td>" + "<td>" + "<a onclick='deleteUser(" + index + ")'>Delete</a>" + "</td>" + "</td></tr>";
     });
 }
 
